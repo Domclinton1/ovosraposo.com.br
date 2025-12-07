@@ -85,7 +85,7 @@ const ProductsSection = ({
           <h2 className="text-white text-3xl md:text-4xl font-bold text-foreground mb-4 uppercase">
             Nossos Produtos
           </h2>
-          <p className="text-gray-50 text-lg text-muted-foreground max-w-2xl mx-auto">Mais frescor, mais sabor, mais nutrição. Nossos ovos chegam direto da granja para garantir o melhor para você e sua família. Escolha a quantidade ideal para suas receitas.</p>
+          <p className="text-white text-lg text-muted-foreground max-w-2xl mx-auto">Mais frescor, mais sabor, mais nutrição. Nossos ovos chegam direto da granja para garantir o melhor para você e sua família. Escolha a quantidade ideal para suas receitas.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">

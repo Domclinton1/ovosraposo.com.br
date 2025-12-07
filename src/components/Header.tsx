@@ -160,15 +160,15 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
               </Button>
             )}
               {/* Botão do WhatsApp */}
-<Button
-  onClick={() => window.open("https://wa.me/5524992502881", "_blank")}
-  variant="outline"
-  size="sm"
-  className="bg-green-600 hover:bg-green-700 text-white border-none transition-all hidden sm:flex"
->
-  <Phone className="h-4 w-4 mr-1 md:mr-2" />
-  <span className="hidden lg:inline">Fale no WhatsApp</span>
-</Button>
+
+            <Button
+            onClick={() => window.open("https://wa.me/5524992502881?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido", "_blank")} 
+            variant="ghost"
+            size="sm"
+            className="text-white"
+            >
+              <Phone/>
+            </Button>
 
             <Button
               onClick={onCartClick}
@@ -189,11 +189,13 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="md:hidden text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
+
+            
             
           </div>
         </div>

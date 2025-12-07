@@ -67,7 +67,7 @@ const RecipesSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-white uppercase">
             Receitas Deliciosas
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-gray-50">Sinta o aroma, a textura e o sabor irresistível de receitas fit preparadas com ovos frescos Raposo.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-white">Sinta o aroma, a textura e o sabor irresistível de receitas fit preparadas com ovos frescos Raposo.
 Mais do que alimentação saudável, é nutrição com prazer, direto da granja para a sua mesa.</p>
         </div>
 

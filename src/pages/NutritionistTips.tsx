@@ -20,7 +20,7 @@ const NutritionistTips = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-white uppercase">
                 Dicas da Nutricionista
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-gray-50">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-white">
                 Orientações profissionais para uma alimentação saudável e equilibrada
               </p>
             </div>

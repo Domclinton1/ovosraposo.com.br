@@ -94,7 +94,7 @@ const NutritionSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-white uppercase">
             Nutrição de Qualidade
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-gray-50">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-white">
             Cada ovo é uma fonte completa de nutrientes essenciais para uma vida saudável
           </p>
         </div>

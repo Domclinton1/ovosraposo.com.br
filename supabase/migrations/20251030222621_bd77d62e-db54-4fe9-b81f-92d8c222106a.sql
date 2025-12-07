@@ -1,0 +1,4 @@
+ALTER TABLE orders 
+ADD COLUMN IF NOT EXISTS mercado_pago_payment_id TEXT,
+ADD COLUMN IF NOT EXISTS pix_qr_code TEXT,
+ADD COLUMN IF NOT EXISTS pix_qr_code_base64 TEXT;

@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System Ovos Raposo - Cores naturais e douradas */
+
+@layer base {
+  :root {
+    /* Base colors inspired by eggs and nature */
+    --background: 0 0% 100%;
+    --foreground: 25 15% 15%;
+
+    /* Cards with warm egg tones */
+    --card: 45 100% 97%;
+    --card-foreground: 25 15% 20%;
+
+    --popover: 45 100% 97%;
+    --popover-foreground: 25 15% 20%;
+
+    /* Primary golden egg colors */
+    --primary: 45 95% 55%;
+    --primary-foreground: 25 15% 15%;
+    --primary-glow: 45 100% 65%;
+
+    /* Secondary earth tones */
+    --secondary: 120 25% 88%;
+    --secondary-foreground: 25 15% 15%;
+
+    /* Muted natural tones */
+    --muted: 45 50% 92%;
+    --muted-foreground: 25 8% 45%;
+
+    /* Accent green for freshness */
+    --accent: 120 40% 75%;
+    --accent-foreground: 25 15% 15%;
+
+    /* Warm orange for urgency */
+    --destructive: 15 85% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders with warm tones */
+    --border: 45 30% 85%;
+    --input: 45 30% 90%;
+    --ring: 45 95% 55%;
+
+    --radius: 0.75rem;
+
+    /* Gradients for hero and CTAs */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(15 85% 55%) 100%);
+
+    /* Shadows with warm glow */
+    --shadow-warm: 0 4px 20px -4px hsl(var(--primary) / 0.25);
+    --shadow-glow: 0 0 30px -5px hsl(var(--primary-glow) / 0.4);
+    --shadow-card: 0 2px 15px -3px hsl(var(--primary) / 0.1);
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+@keyframes fall {
+  0% { transform: translateY(-10vh); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.animate-fall {
+  position: absolute;
+  font-size: 1.2rem;
+  animation-name: fall;
+  animation-timing-function: linear;
+}
+@keyframes blink { 0%, 100% { opacity: .3 } 50% { opacity: 1 } }
+@keyframes blink2 { 0%, 100% { opacity: 1 } 50% { opacity: .3 } }
+@keyframes blink3 { 0%, 100% { opacity: .3 } 50% { opacity: .8 } }
+
+.animate-blink { animation: blink 1s infinite; }
+.animate-blink2 { animation: blink2 1s infinite; }
+.animate-blink3 { animation: blink3 1.4s infinite; }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Hero section styles */
+  .hero-text {
+    @apply text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+
+  /* Product card hover effects */
+  .product-card {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-warm)];
+  }
+
+  /* CTA button with gradient and glow */
+  .cta-button {
+    @apply bg-gradient-to-r from-primary to-destructive text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-glow)];
+  }
+
+  /* Navigation link effects */
+  .nav-link {
+    @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  /* Carousel fade animation */
+  .carousel-fade {
+    @apply transition-opacity duration-1000 ease-in-out;
+  }
+}

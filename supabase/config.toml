@@ -1,0 +1,30 @@
+project_id = "hcqsokycqfhwpfrtugnh"
+
+[functions.whatsapp-webhook]
+verify_jwt = false
+
+[functions.create-clickup-task]
+verify_jwt = true
+
+[functions.get-profiles]
+verify_jwt = true
+
+[functions.create-payment-preference]
+verify_jwt = true
+
+[functions.mercado-pago-webhook]
+verify_jwt = false
+
+[functions.test-mercado-pago]
+verify_jwt = false
+
+[functions.test-clickup]
+verify_jwt = false
+
+[functions.send-password-reset]
+verify_jwt = false
+
+[auth.hook.send_email]
+enabled = true
+uri = "https://hcqsokycqfhwpfrtugnh.supabase.co/functions/v1/send-password-reset"
+secrets = "AUTH_HOOK_SECRET"

@@ -23,8 +23,7 @@ import NotFound from "./pages/NotFound";
 import OrdersByPayment from "./pages/OrdersByPayment";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import SnowEffect from "./components/SnowEffect";
-import Lights from "./components/Lights";
-import WhatsButton from "./components/WhatsButton";
+
 
 const queryClient = new QueryClient();
 
@@ -50,9 +49,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <SnowEffect/>
-      <Lights/>
+    
       <Sonner />
-      <WhatsButton />
+      
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <PixelTracker />
         <ScrollToTop />

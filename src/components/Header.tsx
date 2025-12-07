@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ShoppingCart, Menu, X, User, LogOut, UserCircle } from "lucide-react";
+import { ShoppingCart, Menu, X, User, LogOut, UserCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
@@ -147,6 +147,8 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
                 </Button>
               </div>
             ) : (
+
+              
               <Button
                 onClick={handleLoginClick}
                 variant="ghost"
@@ -157,6 +159,16 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
                 Entrar
               </Button>
             )}
+              {/* Botão do WhatsApp */}
+<Button
+  onClick={() => window.open("https://wa.me/5524992502881", "_blank")}
+  variant="outline"
+  size="sm"
+  className="bg-green-600 hover:bg-green-700 text-white border-none transition-all hidden sm:flex"
+>
+  <Phone className="h-4 w-4 mr-1 md:mr-2" />
+  <span className="hidden lg:inline">Fale no WhatsApp</span>
+</Button>
 
             <Button
               onClick={onCartClick}
@@ -171,6 +183,7 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
                 </span>
               )}
             </Button>
+            
 
             {/* Mobile Menu Button */}
             <Button
@@ -181,6 +194,7 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
+            
           </div>
         </div>
 

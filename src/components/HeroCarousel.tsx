@@ -11,21 +11,21 @@ const HeroCarousel = () => {
   const slides = [
   {
     image: heroFarm, // se quiser posso criar novas imagens temáticas de Natal
-    title: "Natal na Granja Raposo",
+    title: "Ovos Raposo",
     subtitle: "Tradição, carinho e sabor para sua ceia",
     description:
       "Neste Natal, leve para sua mesa o frescor e a qualidade dos nossos ovos especiais. Produção responsável para celebrar momentos inesquecíveis em família."
   },
   {
     image: heroDish,
-    title: "Receitas Natalinas com Ovos Frescos",
+    title: "Receitas Natalinas com Ovos Raposos",
     subtitle: "O ingrediente perfeito para suas melhores criações",
     description:
       "Do panetone caseiro ao pavê cremoso: nossos ovos garantem mais cor, textura e sabor em todas as suas receitas de fim de ano."
   },
   {
     image: heroChickens,
-    title: "Clima de Natal na Nossa Granja",
+    title: "Clima de Natal na Ovos Raposos",
     subtitle: "Cuidado especial também nesta época mágica",
     description:
       "Enquanto você prepara sua ceia, nós cuidamos de cada detalhe na produção. Ovos frescos, nutritivos e feitos com amor — do campo para sua celebração."

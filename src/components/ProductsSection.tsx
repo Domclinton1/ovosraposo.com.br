@@ -86,8 +86,11 @@ const ProductsSection = ({
             Nossos Produtos
           </h2>
           <p className="text-white text-lg text-muted-foreground max-w-2xl mx-auto">Mais frescor, mais sabor, mais nutrição. Nossos ovos chegam direto da granja para garantir o melhor para você e sua família. Escolha a quantidade ideal para suas receitas.</p>
+          <div className="p-10 flex">
+            <OrderButton/>
         </div>
-
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {products.map(product => <Card key={product.id} className="product-card bg-card border-border">
               <CardContent className="p-6">
@@ -126,7 +129,7 @@ const ProductsSection = ({
       </div>
         <div className="p-10 flex">
                 <OrderButton/>
-              </div>
+        </div>
     </section>;
 };
 export default ProductsSection;

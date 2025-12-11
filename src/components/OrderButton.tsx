@@ -1,4 +1,5 @@
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+
 import { Button } from "@/components/ui/button";
 
 export default function OrderButton({ message = "Olá!VIm pelo site e quero fazer um pedido." }) {
@@ -12,7 +13,7 @@ export default function OrderButton({ message = "Olá!VIm pelo site e quero faze
         target="_blank"
         rel="noopener noreferrer"
       >
-        <MessageCircle className="h-5 w-5" />
+        <FaWhatsapp className="h-5 w-5" />
         Fazer Pedido pelo Whatsapp
       </a>
     </Button>

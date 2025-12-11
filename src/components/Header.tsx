@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import logoOvosRaposo from "@/assets/logo-ovos-raposo-colorida.jpg";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface HeaderProps {
   cartItemsCount: number;
@@ -167,7 +168,7 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
             size="sm"
             className="text-white"
             >
-              <Phone/>
+              <FaWhatsapp/>
             </Button>
 
             <Button

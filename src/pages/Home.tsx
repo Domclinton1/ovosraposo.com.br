@@ -526,7 +526,7 @@ const Home = () => {
       <main>
         <HeroCarousel />
         <ProductsSection onAddToCart={handleAddToCart} />
-        <DeliverySection />
+        
       </main>
       
       <Footer />

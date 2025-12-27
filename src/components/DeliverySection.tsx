@@ -85,10 +85,7 @@ const DeliverySection = () => {
     },
   ];
   return (
-    <section
-      id="entrega"
-      className="py-16 bg-red-700"
-    >
+    <section id="entrega" className="py-16 bg-red-700">
       <div className="container mx-auto px-4 ">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-white uppercase">
@@ -135,31 +132,6 @@ const DeliverySection = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Aviso de Horário */}
-        <div className="text-center mb-12">
-          <Card className="bg-gradient-to-r from-primary/10 to-primary-glow/10 border-primary/20 max-w-4xl mx-auto">
-            <CardContent className="p-8">
-              <div className="flex items-center justify-center mb-4">
-                <Clock className="h-8 w-8 text-primary mr-3" />
-                <h3 className="text-2xl font-bold text-foreground uppercase">
-                  Horário de Pedidos
-                </h3>
-              </div>
-              <p className="text-lg text-muted-foreground mb-4">
-                <strong className="text-primary">Pedidos até às 16:00</strong>{" "}
-                são entregues no mesmo dia
-              </p>
-              <p className="text-muted-foreground">
-                Pedidos realizados após às 16:00 horas serão processados e
-                entregues no próximo dia de rota do seu bairro.
-              </p>
-            </CardContent>
-          </Card>
-            <div className="p-10 flex">
-                    <OrderButton/>
-                  </div>
         </div>
 
         {/* Rotas de Entrega por Dia */}
@@ -252,7 +224,6 @@ const DeliverySection = () => {
               </div>
             </CardContent>
           </Card>
-          
 
           <Card className="bg-card hover:shadow-lg transition-shadow">
             <CardHeader>
@@ -296,14 +267,13 @@ const DeliverySection = () => {
                 Entre em contato conosco! Estamos sempre expandindo nossa área
                 de cobertura.
               </p>
-                <div className="p-10 flex">
-                        <OrderButton/>
-                      </div>
+              <div className="p-10 flex">
+                <OrderButton />
+              </div>
             </CardContent>
           </Card>
         </div>
       </div>
-        
     </section>
   );
 };

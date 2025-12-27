@@ -85,13 +85,13 @@ const DeliverySection = () => {
     },
   ];
   return (
-    <section id="entrega" className="py-16 bg-red-700">
+    <section id="entrega" className="py-16 bg-white">
       <div className="container mx-auto px-4 ">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-white uppercase">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-[#ee7923] uppercase">
             Entrega Rápida e Segura
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-white">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-[#faaf40]">
             Rotas programadas para garantir frescor e pontualidade na sua
             entrega
           </p>
@@ -260,7 +260,7 @@ const DeliverySection = () => {
         <div className="mt-8 max-w-4xl mx-auto">
           <Card className="bg-accent/10 border-accent/20">
             <CardContent className="p-6 text-center">
-              <p className="text-white mb-4 uppercase">
+              <p className="text-black mb-4 uppercase">
                 <strong className="text-foreground text-yellow-300">
                   Não encontrou seu bairro?
                 </strong>{" "}

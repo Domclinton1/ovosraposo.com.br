@@ -25,14 +25,13 @@ import OrderConfirmation from "./pages/OrderConfirmation";
 import SnowEffect from "./components/SnowEffect";
 import WhatsButton from "./components/WhatsButton";
 
-
 const queryClient = new QueryClient();
 
 const PixelTracker = () => {
   const location = useLocation();
 
   useEffect(() => {
-    ReactPixel.init('805047972423399', undefined, {
+    ReactPixel.init("805047972423399", undefined, {
       autoConfig: true,
       debug: false,
     });
@@ -49,14 +48,15 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <SnowEffect/>
-      <WhatsButton/>
+
+      <WhatsButton />
       <Sonner />
-      
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+
+      <BrowserRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <PixelTracker />
         <ScrollToTop />
-        
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -72,7 +72,10 @@ const App = () => (
           <Route path="/complete-profile" element={<CompleteProfile />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/orders/:paymentMethod" element={<OrdersByPayment />} />
+          <Route
+            path="/admin/orders/:paymentMethod"
+            element={<OrdersByPayment />}
+          />
           <Route path="/pedido-confirmado" element={<OrderConfirmation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

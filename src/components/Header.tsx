@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
-import { ShoppingCart, Menu, X, User, LogOut, UserCircle, Phone } from "lucide-react";
+import {
+  ShoppingCart,
+  Menu,
+  X,
+  User,
+  LogOut,
+  UserCircle,
+  Phone,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
@@ -28,7 +36,9 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
     });
 
     // Listener para mudanças de autenticação
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
       if (session?.user) {
         loadUserProfile(session.user.id);
       } else {
@@ -48,7 +58,7 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
       .maybeSingle();
 
     if (error) {
-      console.error('Erro ao carregar perfil:', error);
+      console.error("Erro ao carregar perfil:", error);
     } else if (data) {
       setCurrentUser(data);
     }
@@ -60,7 +70,7 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
       .eq("user_id", userId);
 
     if (rolesError) {
-      console.error('Erro ao carregar roles:', rolesError);
+      console.error("Erro ao carregar roles:", rolesError);
     } else if (rolesData) {
       setUserRoles(rolesData.map((r) => r.role));
     }
@@ -93,18 +103,16 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
   };
 
   return (
-    <header className="bg-background shadow-[var(--shadow-card)] sticky top-0 z-50">
-     
-
+    <header className="bg-background border-b-2 shadow-[var(--shadow-card)] sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src={logoOvosRaposo} 
-              alt="Ovos Raposo" 
-              className="h-10 w-auto cursor-pointer sm:h-12 md:h-14 lg:h-16 transition-all" 
-              onClick={() => navigate('/')}
+            <img
+              src={logoOvosRaposo}
+              alt="Ovos Raposo"
+              className="h-10 w-auto cursor-pointer sm:h-12 md:h-14 lg:h-16 transition-all"
+              onClick={() => navigate("/")}
             />
           </div>
 
@@ -123,86 +131,89 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
 
           {/* User & Cart Actions */}
           <div className="flex items-center space-x-4">
-  {currentUser ? (
-    <div className="hidden md:flex items-center space-x-2 bg-red-700 text-white">
-      <span className="text-sm text-foreground">
-        Olá, {currentUser.full_name?.split(' ')[0] || 'Usuário'}
-      </span>
-      <Button
-        onClick={() => navigate("/profile")}
-        variant="ghost"
-        size="sm"
-        className="text-sm"
-      >
-        <UserCircle className="h-4 w-4 mr-1" />
-        Perfil
-      </Button>
-      <Button
-        onClick={handleLogout}
-        variant="ghost"
-        size="sm"
-        className="text-sm"
-      >
-        <LogOut className="h-4 w-4 mr-1" />
-        Sair
-      </Button>
-    </div>
-  ) : (
-    <>
-      {/* Botão do WhatsApp antes do botão de entrar */}
-      <Button
-        onClick={() =>
-          window.open(
-            "https://wa.me/5524992502881?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido",
-            "_blank"
-          )
-        }
-        variant="ghost"
-        size="sm"
-        className="text-white bg-red-700 hover:bg-green-700 p-2 uppercase  hover:text-white"
-      > 
-        <FaWhatsapp className="h-5 w-5" />
-        Falar no Whatsapp
-      </Button>
+            {currentUser ? (
+              <div className="hidden md:flex items-center space-x-2 bg-red-700 text-white">
+                <span className="text-sm text-foreground">
+                  Olá, {currentUser.full_name?.split(" ")[0] || "Usuário"}
+                </span>
+                <Button
+                  onClick={() => navigate("/profile")}
+                  variant="ghost"
+                  size="sm"
+                  className="text-sm"
+                >
+                  <UserCircle className="h-4 w-4 mr-1" />
+                  Perfil
+                </Button>
+                <Button
+                  onClick={handleLogout}
+                  variant="ghost"
+                  size="sm"
+                  className="text-sm"
+                >
+                  <LogOut className="h-4 w-4 mr-1" />
+                  Sair
+                </Button>
+              </div>
+            ) : (
+              <>
+                {/* Botão do WhatsApp antes do botão de entrar */}
+                <Button
+                  onClick={() =>
+                    window.open(
+                      "https://wa.me/5524992502881?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido",
+                      "_blank"
+                    )
+                  }
+                  variant="ghost"
+                  size="sm"
+                  className="text-white bg-[#ee7923] hover:bg-[#faaf40] p-2 uppercase  hover:text-white"
+                >
+                  <FaWhatsapp className="h-5 w-5" />
+                  Falar no Whatsapp
+                </Button>
 
-      <Button
-        onClick={handleLoginClick}
-        variant="ghost"
-        size="sm"
-        className="hidden md:flex text-sm bg-red-700 text-white uppercase"
-      >
-        <User className="h-4 w-4 mr-1" />
-        Entrar
-      </Button>
-    </>
-  )}
+                <Button
+                  onClick={handleLoginClick}
+                  variant="ghost"
+                  size="sm"
+                  className="hidden md:flex text-sm bg-[#ee7923] hover:bg-[#faaf40] text-white uppercase"
+                >
+                  <User className="h-4 w-4 mr-1" />
+                  Entrar
+                </Button>
+              </>
+            )}
 
-  {/* Botão do carrinho */}
-  <Button
-    onClick={onCartClick}
-    variant="outline"
-    size="sm"
-    className="relative bg-red-700 text-white"
-  >
-    <ShoppingCart className="h-5 w-5" />
-    {cartItemsCount > 0 && (
-      <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center animate-bounce-gentle">
-        {cartItemsCount}
-      </span>
-    )}
-  </Button>
+            {/* Botão do carrinho */}
+            <Button
+              onClick={onCartClick}
+              variant="outline"
+              size="sm"
+              className="relative bg-[#ee7923] hover:bg-[#faaf40] text-white"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {cartItemsCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center animate-bounce-gentle">
+                  {cartItemsCount}
+                </span>
+              )}
+            </Button>
 
-  {/* Botão do menu móvel */}
-  <Button
-    variant="ghost"
-    size="sm"
-    className="md:hidden text-white"
-    onClick={() => setIsMenuOpen(!isMenuOpen)}
-  >
-    {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-  </Button>
-</div>
-
+            {/* Botão do menu móvel */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden text-white"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -219,16 +230,19 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
                   {item.name}
                 </Link>
               ))}
-              
+
               {/* Mobile User Actions */}
               <div className="pt-2 border-t border-border">
                 {currentUser ? (
                   <div className="space-y-2">
                     <div className="px-2 py-1 text-sm text-foreground">
-                      Olá, {currentUser.full_name?.split(' ')[0] || 'Usuário'}
+                      Olá, {currentUser.full_name?.split(" ")[0] || "Usuário"}
                     </div>
                     <button
-                      onClick={() => { navigate("/profile"); setIsMenuOpen(false); }}
+                      onClick={() => {
+                        navigate("/profile");
+                        setIsMenuOpen(false);
+                      }}
                       className="flex items-center px-2 py-2 text-foreground hover:text-primary font-medium transition-colors"
                     >
                       <UserCircle className="h-4 w-4 mr-2" />

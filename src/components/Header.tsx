@@ -123,82 +123,86 @@ const Header = ({ cartItemsCount, onCartClick }: HeaderProps) => {
 
           {/* User & Cart Actions */}
           <div className="flex items-center space-x-4">
-            {currentUser ? (
-              <div className="hidden md:flex items-center space-x-2 bg-red-700 text-white">
-                <span className="text-sm text-foreground">
-                  Olá, {currentUser.full_name?.split(' ')[0] || 'Usuário'}
-                </span>
-                <Button
-                  onClick={() => navigate("/profile")}
-                  variant="ghost"
-                  size="sm"
-                  className="text-sm"
-                >
-                  <UserCircle className="h-4 w-4 mr-1" />
-                  Perfil
-                </Button>
-                <Button
-                  onClick={handleLogout}
-                  variant="ghost"
-                  size="sm"
-                  className="text-sm"
-                >
-                  <LogOut className="h-4 w-4 mr-1" />
-                  Sair
-                </Button>
-              </div>
-            ) : (
+  {currentUser ? (
+    <div className="hidden md:flex items-center space-x-2 bg-red-700 text-white">
+      <span className="text-sm text-foreground">
+        Olá, {currentUser.full_name?.split(' ')[0] || 'Usuário'}
+      </span>
+      <Button
+        onClick={() => navigate("/profile")}
+        variant="ghost"
+        size="sm"
+        className="text-sm"
+      >
+        <UserCircle className="h-4 w-4 mr-1" />
+        Perfil
+      </Button>
+      <Button
+        onClick={handleLogout}
+        variant="ghost"
+        size="sm"
+        className="text-sm"
+      >
+        <LogOut className="h-4 w-4 mr-1" />
+        Sair
+      </Button>
+    </div>
+  ) : (
+    <>
+      {/* Botão do WhatsApp antes do botão de entrar */}
+      <Button
+        onClick={() =>
+          window.open(
+            "https://wa.me/5524992502881?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido",
+            "_blank"
+          )
+        }
+        variant="ghost"
+        size="sm"
+        className="text-white bg-red-700 hover:bg-green-700 p-2 uppercase  hover:text-white"
+      > 
+        <FaWhatsapp className="h-5 w-5" />
+        Falar no Whatsapp
+      </Button>
 
-              
-              <Button
-                onClick={handleLoginClick}
-                variant="ghost"
-                size="sm"
-                className="hidden md:flex text-sm bg-red-700 text-white uppercase"
-              >
-                <User className="h-4 w-4 mr-1" />
-                Entrar
-              </Button>
-            )}
-              {/* Botão do WhatsApp */}
+      <Button
+        onClick={handleLoginClick}
+        variant="ghost"
+        size="sm"
+        className="hidden md:flex text-sm bg-red-700 text-white uppercase"
+      >
+        <User className="h-4 w-4 mr-1" />
+        Entrar
+      </Button>
+    </>
+  )}
 
-            <Button
-            onClick={() => window.open("https://wa.me/5524992502881?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido", "_blank")} 
-            variant="ghost"
-            size="sm"
-            className="text-white"
-            >
-              <FaWhatsapp/>
-            </Button>
+  {/* Botão do carrinho */}
+  <Button
+    onClick={onCartClick}
+    variant="outline"
+    size="sm"
+    className="relative bg-red-700 text-white"
+  >
+    <ShoppingCart className="h-5 w-5" />
+    {cartItemsCount > 0 && (
+      <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center animate-bounce-gentle">
+        {cartItemsCount}
+      </span>
+    )}
+  </Button>
 
-            <Button
-              onClick={onCartClick}
-              variant="outline"
-              size="sm"
-              className="relative bg-red-700 text-white"
-            >
-              <ShoppingCart className="h-5 w-5" />
-              {cartItemsCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center animate-bounce-gentle">
-                  {cartItemsCount}
-                </span>
-              )}
-            </Button>
-            
+  {/* Botão do menu móvel */}
+  <Button
+    variant="ghost"
+    size="sm"
+    className="md:hidden text-white"
+    onClick={() => setIsMenuOpen(!isMenuOpen)}
+  >
+    {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+  </Button>
+</div>
 
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="md:hidden text-white"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-
-            
-            
-          </div>
         </div>
 
         {/* Mobile Navigation */}
